@@ -189,6 +189,10 @@ describe 'Annotator.Editor', ->
       editor.addField({type: 'checkbox'})
       expect(editor.element.find('li:last :input').prop('type')).toEqual('checkbox')
 
+    it "should append a radio element if 'radio' type is specified", ->
+      editor.addField({type: 'radio'})
+      expect(editor.element.find('li:last :input').prop('type')).toEqual('radio')
+
     it "should append a label element with a for attribute matching the checkbox id", ->
       editor.addField({type: 'checkbox'})
       expect(

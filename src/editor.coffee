@@ -182,8 +182,8 @@ class Annotator.Editor extends Annotator.Widget
   #           id     - A unique id for the form element will also be set as the
   #                    "for" attrubute of a label if there is one. Defaults to
   #                    a timestamp. (default: "annotator-field-{timestamp}")
-  #           type   - Input type String. One of "input", "textarea", "checkbox"
-  #                    (default: "input")
+  #           type   - Input type String. One of "input", "textarea", "checkbox",
+  #                    "radio", "span" (default: "input")
   #           label  - Label to display either in a label Element or as place-
   #                    holder text depending on the type. (default: "")
   #           load   - Callback Function called when the editor is loaded with a

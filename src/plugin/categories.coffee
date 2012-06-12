@@ -19,9 +19,6 @@ class Annotator.Plugin.Categories extends Annotator.Plugin
 #    color: black;
 #}
 #
-
-
-    
     
   # The field element added to the Annotator.Editor wrapped in jQuery. Cached to
   # save having to recreate it everytime the editor is displayed.
@@ -31,14 +28,12 @@ class Annotator.Plugin.Categories extends Annotator.Plugin
   # save having to recreate it everytime the editor is displayed.
   input: null
   
-  
   options:
     categories: {}
-  
-
 
   constructor: (element, categories) -> 
     @options.categories = categories
+
 
 
   # Public: Initialises the plugin and adds custom fields to both the
