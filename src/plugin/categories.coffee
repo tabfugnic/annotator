@@ -75,11 +75,11 @@ class Annotator.Plugin.Categories extends Annotator.Plugin
 
     @input = $(@field).find(':input')
   
-   setViewer: (viewer, annotations) ->
-     v = viewer
+  setViewer: (viewer, annotations) ->
+    v = viewer
   
   # set the highlights of the annotation here.
-   setHighlights: (annotation) ->
+  setHighlights: (annotation) ->
     cat = annotation.category
     highlights = annotation.highlights
 
@@ -87,12 +87,6 @@ class Annotator.Plugin.Categories extends Annotator.Plugin
       for h in highlights
         h.className = h.className + ' ' + this.options.categories[cat]
         
-        
-      
-
-
-
-
   # Annotator.Editor callback function. Updates the radio buttons with the
   # category attached to the provided annotation.
   #
