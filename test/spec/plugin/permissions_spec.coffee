@@ -6,7 +6,8 @@ describe 'Annotator.Plugin.Permissions', ->
     el = $("<div class='annotator-viewer'></div>").appendTo('body')[0]
     permissions = new Annotator.Plugin.Permissions(el)
 
-  afterEach -> $(el).remove()
+  afterEach ->
+    $(el).remove()
 
   it "it should add the current user object to newly created annotations on beforeAnnotationCreated", ->
     ann = {}
@@ -282,7 +283,8 @@ describe 'Annotator.Plugin.Permissions', ->
       permissions.setUser('Alice')
       permissions.updatePermissionsField('update', field, annotations.shift())
 
-    afterEach -> field.remove()
+    afterEach ->
+      field.remove()
 
     it "should have a checked checkbox when there are no permissions", ->
       expect(checkbox.is(':checked')).toBeTruthy()

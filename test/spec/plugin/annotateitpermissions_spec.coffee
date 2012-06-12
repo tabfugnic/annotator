@@ -6,7 +6,8 @@ describe 'Annotator.Plugin.AnnotateItPermissions', ->
     el = $("<div class='annotator-viewer'></div>").appendTo('body')[0]
     permissions = new Annotator.Plugin.AnnotateItPermissions(el)
 
-  afterEach -> $(el).remove()
+  afterEach ->
+    $(el).remove()
 
   describe 'authorize', ->
     annotations = null

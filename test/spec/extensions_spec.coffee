@@ -10,7 +10,8 @@ describe 'jQuery.fn.textNodes()', ->
     addFixture 'textnodes'
     $fix = $(fix())
 
-  afterEach -> clearFixtures()
+  afterEach ->
+    clearFixtures()
 
   it "returns an element's textNode descendants", ->
     nodes = $fix.textNodes()
@@ -75,7 +76,8 @@ describe 'jQuery.fn.xpath()', ->
     addFixture 'xpath'
     $fix = $(fix())
 
-  afterEach -> clearFixtures()
+  afterEach ->
+    clearFixtures()
 
   it "generates an XPath string for an element's position in the document", ->
     # FIXME: this is quite fragile. A change to dom.html may well break these tests and the

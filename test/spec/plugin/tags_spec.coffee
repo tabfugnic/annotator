@@ -78,7 +78,8 @@ describe 'Annotator.Plugin.Tags', ->
 
 describe 'Annotator.Plugin.Tags.filterCallback', ->
   filter = null
-  beforeEach -> filter = Annotator.Plugin.Tags.filterCallback
+  beforeEach ->
+    filter = Annotator.Plugin.Tags.filterCallback
 
   it 'should return true if all tags are matched by keywords', ->
     expect(filter('cat dog mouse', ['cat', 'dog', 'mouse'])).toBe(true)

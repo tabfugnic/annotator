@@ -136,7 +136,7 @@ class Annotator.Editor extends Annotator.Widget
       field.load(field.element, @annotation)
       
       # make the correct radio button checked
-      if annotation.category? and field.type=='radio'
+      if annotation and annotation.category? and field.type=='radio'
         if field.value == @annotation.category
           field.element.childNodes[0].checked = true
 

@@ -144,7 +144,8 @@ describe 'Annotator.Editor', ->
   describe "addField", ->
     content = null
 
-    beforeEach -> content = editor.element.children()
+    beforeEach ->
+      content = editor.element.children()
 
     afterEach ->
       editor.element.empty().append(content)

@@ -381,7 +381,6 @@ class Annotator extends Delegator
     loader = (annList=[]) =>
       now = annList.splice(0,10)
 
-
       for n in now
         this.setupAnnotation(n, false) # 'false' suppresses event firing
 
@@ -587,6 +586,7 @@ class Annotator extends Delegator
       return if this.isAnnotatorViewer(container)
       return if this.isAnnotatorEditor(container)
       return if this.isAnnotatorWidget(container)
+      return if this.isAnnotator(container)
 
     if event and @selectedRanges.length
       @adder

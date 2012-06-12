@@ -25,7 +25,8 @@ describe 'Delegator', ->
     delegator = new DelegatedExample(fix())
     $fix = $(fix())
 
-  afterEach -> clearFixtures()
+  afterEach ->
+    clearFixtures()
 
   describe "options", ->
     it "should provide access to an options object", ->

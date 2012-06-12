@@ -1,8 +1,10 @@
 describe 'Annotator', ->
   annotator = null
 
-  beforeEach -> annotator = new Annotator($('<div></div>')[0], {})
-  afterEach  -> $(document).unbind()
+  beforeEach ->
+    annotator = new Annotator($('<div></div>')[0], {})
+  afterEach  ->
+    $(document).unbind()
 
   describe "events", ->
     it "should call Annotator#onAdderClick() when adder is clicked", ->
@@ -233,7 +235,8 @@ describe 'Annotator', ->
       addFixture 'annotator'
       $fix = $(fix())
 
-    afterEach -> clearFixtures()
+    afterEach ->
+      clearFixtures()
 
     it 'should ensure Annotator z-indices are larger than others in the page', ->
       $fix.show()

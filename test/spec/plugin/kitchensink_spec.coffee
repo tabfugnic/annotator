@@ -15,7 +15,8 @@ describe 'Annotator::setupPlugins', ->
     this.addMatchers
       toContainFilter: (prop) -> prop in (f.property for f in this.actual.filters)
 
-  afterEach -> clearFixtures()
+  afterEach ->
+    clearFixtures()
 
   it 'should added to the Annotator prototype', ->
     expect(typeof Annotator::setupPlugins).toBe('function')
@@ -34,7 +35,8 @@ describe 'Annotator::setupPlugins', ->
       annotator = new Annotator(fix())
       annotator.setupPlugins({}, {Filter: {appendTo: fix()}})
 
-    afterEach -> window.Showdown = _Showdown
+    afterEach ->
+      window.Showdown = _Showdown
 
     describe 'it includes the Unsupported plugin', ->
       it 'should add the Unsupported plugin by default', ->
@@ -47,7 +49,8 @@ describe 'Annotator::setupPlugins', ->
     describe 'it includes the Filter plugin', ->
       filterPlugin = null
 
-      beforeEach -> filterPlugin = annotator.plugins.Filter
+      beforeEach ->
+        filterPlugin = annotator.plugins.Filter
 
       it 'should add the Filter plugin by default', ->
         expect(filterPlugin).toBeDefined()
@@ -78,7 +81,8 @@ describe 'Annotator::setupPlugins', ->
     expect(annotator.plugins.Auth).toBeDefined()
 
   describe 'called with plugin options', ->
-    beforeEach -> annotator = new Annotator(fix())
+    beforeEach ->
+      annotator = new Annotator(fix())
 
     it 'should override default plugin options', ->
       annotator.setupPlugins null,
