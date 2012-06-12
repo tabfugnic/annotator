@@ -72,7 +72,7 @@ class Annotator.Editor extends Annotator.Widget
   #
   # Returns itself.
   show: (event) =>
-    event?.preventDefault()
+    util.preventEventDefault event
 
     @element.removeClass(@classes.hide)
     @element.find('.annotator-save').addClass(@classes.focus)
@@ -104,7 +104,7 @@ class Annotator.Editor extends Annotator.Widget
   #
   # Returns itself.
   hide: (event) =>
-    event?.preventDefault()
+    util.preventEventDefault event
 
     @element.addClass(@classes.hide)
     this.publish('hide')
@@ -166,7 +166,7 @@ class Annotator.Editor extends Annotator.Widget
   #
   # Returns itself.
   submit: (event) =>
-    event?.preventDefault()
+    util.preventEventDefault event
 
     for field in @fields
       field.submit(field.element, @annotation)

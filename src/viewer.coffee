@@ -21,17 +21,22 @@ class Annotator.Viewer extends Annotator.Widget
     item:   """
             <li class="annotator-annotation annotator-item">
               <span class="annotator-controls">
-                <button class="annotator-edit">Edit</button>
-                <button class="annotator-delete">Delete</button>
+                <a href="#" title="View as webpage" class="annotator-link">View as webpage</a>
+                <button title="Edit" class="annotator-edit">Edit</button>
+                <button title="Delete" class="annotator-delete">Delete</button>
               </span>
             </li>
             """
 
+  # Configuration options
+  options:
+    readOnly: false # Start the viewer in read-only mode. No controls will be shown.
+
+
   # Public: Creates an instance of the Viewer object. This will create the
   # @element from the @html.element string and set up all events.
   #
-  # options - An Object literal containing options. There are currently no
-  #           options implemented.
+  # options - An Object literal containing options. 
   #
   # Examples
   #
