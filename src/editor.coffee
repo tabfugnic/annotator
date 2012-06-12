@@ -244,10 +244,9 @@ class Annotator.Editor extends Annotator.Widget
     field.element = element[0]
 
     switch (field.type)
-      when 'textarea'          then input = $('<textarea />')
-      when 'input', 'checkbox' then input = $('<input />')
-      when 'radio'             then input = $('<input type="radio"/>')
-      when 'span'              then input = $('<span/>')
+      when 'textarea'                   then input = $('<textarea />')
+      when 'input', 'checkbox', 'radio' then input = $('<input />')
+      when 'span'                       then input = $('<span/>')
     element.append(input);
 
     input.attr({
