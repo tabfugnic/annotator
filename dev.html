@@ -23,6 +23,7 @@
     <script src="lib/plugin/tags.js"></script>
     <script src="lib/plugin/unsupported.js"></script>
     <script src="lib/plugin/filter.js"></script>
+    <script src="lib/plugin/categories.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/annotator.css">
   </head>
@@ -96,13 +97,17 @@
       var devAnnotator
       (function ($) {
         var elem = document.getElementById('airlock');
-
+        categories = {
+          'errata':'annotator-hl-errata', 
+          'comment':'annotator-hl-comment', 
+          'suggestion':'annotator-hl-suggestion' };
         devAnnotator = new Annotator(elem)
           .addPlugin('Auth', {
             tokenUrl: 'http://localhost:5000/api/token'
           })
           .addPlugin('Unsupported')
           .addPlugin('AnnotateItPermissions')
+          .addPlugin('Categories', categories)
           .addPlugin('Store', {
             prefix: 'http://localhost:5000/api',
             loadFromSearch: {
