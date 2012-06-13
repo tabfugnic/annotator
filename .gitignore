@@ -2,3 +2,10 @@
 .cake_task_cache
 *.sublime-workspace
 node_modules
+# Ignore all do files
+.do_built*
+.redo*
+*.did
+# Ignore tempory files
+*~
+*.tmp
