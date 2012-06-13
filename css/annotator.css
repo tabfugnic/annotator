@@ -260,8 +260,7 @@
 	-moz-transition: opacity 0.2s ease-in;
 	-o-transition: opacity 0.2s ease-in;
 	transition: opacity 0.2s ease-in;
-	float:right;
-        width:90%;
+	float: right;
 }
 
 .annotator-viewer li:hover .annotator-controls,
@@ -469,7 +468,8 @@
 	cursor: pointer;
 }
 
-.annotator-editor .annotator-checkbox {
+.annotator-editor .annotator-checkbox, 
+.annotator-editor .annotator-radio {
 	padding: 8px 6px;
 }
 
