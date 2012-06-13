@@ -8,4 +8,5 @@ echo plugin/annotateitpermissions
 echo plugin/filter
 echo plugin/markdown
 echo plugin/tags
+echo plugin/categories
 echo plugin/kitchensink
