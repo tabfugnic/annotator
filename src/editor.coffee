@@ -272,7 +272,8 @@ class Annotator.Editor extends Annotator.Widget
       if field.checked
         input[0].checked = true
 
-
+      if field.hl != undefined
+        element.addClass(field.hl)
       element.addClass('annotator-radio')
       element.append($('<label />', {for: field.id, html: field.label}))
 
