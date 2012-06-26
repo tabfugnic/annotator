@@ -119,7 +119,7 @@ class Annotator extends Delegator
     this
 
   # Creates an instance of Annotator.Viewer and assigns it to the @viewer
-  # property, appends it to the @wrapper and sets up event listeneviewerrs.
+  # property, appends it to the @wrapper and sets up event listeners.
   #
   # Returns itself to allow chaining.
   _setupViewer: ->
@@ -486,6 +486,7 @@ class Annotator extends Delegator
   showEditor: (annotation, location) =>
     @editor.element.css(location)
     @editor.load(annotation)
+    this.publish('annotationEditorShown', [@editor, annotation])
     this
 
   # Callback method called when the @editor fires the "hide" event. Itself
@@ -556,7 +557,7 @@ class Annotator extends Delegator
   #
   # Returns nothing.
   checkForStartSelection: (event) =>
-    unless event #and this.isAnnotator(event.target)
+    unless event and this.isAnnotator(event.target)
       this.startViewerHideTimer()
       @mouseIsDown = true
 
@@ -583,6 +584,8 @@ class Annotator extends Delegator
 
     for range in @selectedRanges
       container = range.commonAncestor
+      if $(container).hasClass('annotator-hl')
+        container = $(container).parents('[class^=annotator-hl]')[0]
       return if this.isAnnotatorViewer(container)
       return if this.isAnnotatorEditor(container)
       return if this.isAnnotatorWidget(container)

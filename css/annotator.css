@@ -529,7 +529,7 @@
 	border-radius: 0 0 5px 5px;
 }
 
-.annotator-invert-y .annotator-controls {
+.annotator-editor.annotator-invert-y .annotator-controls {
 	border-top: none;
 	border-bottom: none;
 	-webkit-border-radius: 5px 5px 0 0;
