@@ -82,11 +82,19 @@ class Annotator.Plugin.Categories extends Annotator.Plugin
   setHighlights: (annotation) ->
     cat = annotation.category
     highlights = annotation.highlights
-
-    if cat    
-      for h in highlights
-        h.className = h.className + ' ' + this.options.categories[cat]
         
+    if cat
+      for h in highlights
+        this._clearHighlight(h)
+        $(h).addClass this.options.categories[cat]
+
+  #
+  # Clear all categories from an annotation
+  #
+  _clearHighlight: (highlight) ->
+    for key, val of this.options.categories
+      $(highlight).removeClass val
+    this
   # Annotator.Editor callback function. Updates the radio buttons with the
   # category attached to the provided annotation.
   #
@@ -125,14 +133,12 @@ class Annotator.Plugin.Categories extends Annotator.Plugin
     if field.childNodes[0].checked
         annotation.category = field.childNodes[0].id
 
-
-
+    
  #
  # Displays the category of the annotation when on the viewer
  #
   updateViewer: (field, annotation) ->
     field = $(field)
-
     if annotation.category?
       field.addClass('annotator-category').html(->
         string = $.map(annotation.category,(cat) ->

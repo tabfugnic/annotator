@@ -351,6 +351,9 @@ class Annotator extends Delegator
   updateAnnotation: (annotation) ->
     this.publish('beforeAnnotationUpdated', [annotation])
     this.publish('annotationUpdated', [annotation])
+    # let the categories plugin set the highlights if it is present
+    if @plugins['Categories']
+      @plugins['Categories'].setHighlights(annotation)
     annotation
 
   # Public: Deletes the annotation by removing the highlight from the DOM.
